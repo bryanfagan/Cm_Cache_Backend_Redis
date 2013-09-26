@@ -18,10 +18,9 @@ without the use of TwoLevels cache so this backend is great for use on a single 
 
  1. Install [redis](http://redis.io/download) (2.4+ required)
  2. Install [phpredis](https://github.com/nicolasff/phpredis) (optional)
-
-   * For 2.4 support you must use the "master" branch or a tagged version newer than Aug 19, 2011.
-   * phpredis is optional, but it is much faster than standalone mode
-   * phpredis does not support setting read timeouts at the moment (see pull request #260). If you receive read errors (“read error on connection”), this might be the reason.
+    * For 2.4 support you must use the "master" branch or a tagged version newer than Aug 19, 2011.
+    * phpredis is optional, but it is much faster than standalone mode
+    * phpredis does not support setting read timeouts at the moment (see pull request #260). If you receive read errors (“read error on connection”), this might be the reason.
  3. Install using Composer (optional; see http://getcomposer.org)
 
 ```
@@ -65,7 +64,7 @@ without the use of TwoLevels cache so this backend is great for use on a single 
 
 ## Release Notes
 
- - September 26, 2013: I forked this from Colon's code solely to make it a standalone package, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
+ - September 26, 2013: I forked this from Colon's code solely to make it a ZF add-on, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
  - November 19, 2012: Added read_timeout option. (Feature only supported in standalone mode, will be supported by phpredis when pull request #260 is merged)
  - October 29, 2012: Added support for persistent connections. (Thanks samm-git!)
  - October 12, 2012: Improved memory usage and efficiency of garbage collection and updated recommendation.
