@@ -25,6 +25,7 @@ without the use of TwoLevels cache so this backend is great for use on a single 
 
  3. Install using Composer (optional; see http://getcomposer.org)
 
+```
 {
     //...
     "require": {
