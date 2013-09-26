@@ -1,5 +1,5 @@
 {
-    "name": "bryanfagan/cache-backend-redis",
+    "name": "colinmollenhour/cache-backend-redis",
     "keywords": ["redis", "caching", "zf", "zend framework"],
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/bryanfagan/Cm_Cache_Backend_Redis",
