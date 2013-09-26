@@ -34,6 +34,12 @@ without the use of TwoLevels cache so this backend is great for use on a single 
         }
     ],
     // ...
+    "require": {
+        // ...
+        "colinmollenhour/cache-backend-redis": "dev-master as 1.4.x-dev"
+        // ...
+    },
+    // ...
 }
 ```
 
@@ -59,7 +65,7 @@ without the use of TwoLevels cache so this backend is great for use on a single 
 
 ## Release Notes
 
- - September 26, 2013: I forked this from Colon's library solely to make it a standalone library, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
+ - September 26, 2013: I forked this from Colon's code solely to make it a standalone package, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
  - November 19, 2012: Added read_timeout option. (Feature only supported in standalone mode, will be supported by phpredis when pull request #260 is merged)
  - October 29, 2012: Added support for persistent connections. (Thanks samm-git!)
  - October 12, 2012: Improved memory usage and efficiency of garbage collection and updated recommendation.
