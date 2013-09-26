@@ -22,15 +22,17 @@ without the use of TwoLevels cache so this backend is great for use on a single 
    * For 2.4 support you must use the "master" branch or a tagged version newer than Aug 19, 2011.
    * phpredis is optional, but it is much faster than standalone mode
    * phpredis does not support setting read timeouts at the moment (see pull request #260). If you receive read errors (“read error on connection”), this might be the reason.
-
  3. Install using Composer (optional; see http://getcomposer.org)
 
 ```
 {
     //...
-    "require": {
-        "bryanfagan/cache-backend-redis": "*"
-    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bryanfagan/Cm_Cache_Backend_Redis"
+        }
+    ],
     // ...
 }
 ```
