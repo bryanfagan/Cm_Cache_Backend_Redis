@@ -44,27 +44,21 @@ without the use of TwoLevels cache so this backend is great for use on a single 
 
 ## RELATED / TUNING
 
- - The recommended "maxmemory-policy" is "volatile-lru". All tag metadata is non-volatile so it is
-   recommended to use key expirations unless non-volatile keys are absolutely necessary so that tag
-   data cannot get evicted. So, be sure that the "maxmemory" is high enough to accommodate all of
-   the tag data and non-volatile data with enough room left for the volatile key data as well.
+ - The recommended "maxmemory-policy" is "volatile-lru". All tag metadata is non-volatile so it is recommended to use key expirations unless non-volatile keys are absolutely necessary so that tag data cannot get evicted. So, be sure that the "maxmemory" is high enough to accommodate all of the tag data and non-volatile data with enough room left for the volatile key data as well.
  - Automatic cleaning is optional and not recommended since it is slow and uses lots of memory.
- - Occasional (e.g. once a day) garbage collection is recommended if the entire cache is infrequently cleared and
-   automatic cleaning is not enabled. The best solution is to run a cron job which does the garbage collection.
-   (See "Example Garbage Collection Script" below.)
+ - Occasional (e.g. once a day) garbage collection is recommended if the entire cache is infrequently cleared and automatic cleaning is not enabled. The best solution is to run a cron job which does the garbage collection.
  - Compression will have additional CPU overhead but may be worth it for memory savings and reduced traffic.
    For high-latency networks it may even improve performance.
    - gzip — Slowest but highest compression. Most likely you will not want to use above level 1 compression.
    - lzf — Fastest compress, fast decompress. Install: `sudo pecl install lzf`
    - snappy — Fastest decompress, fast compress. Download and install: [snappy](http://code.google.com/p/snappy/) and [php-snappy](http://code.google.com/p/php-snappy/)
- - Monitor your redis cache statistics with my modified [munin plugin](https://gist.github.com/1177716).
- - Enable persistent connections. Make sure that if you have multiple configurations connecting the persistent
-   string is unique for each configuration so that "select" commands don't cause conflicts.
+ - Monitor your redis cache statistics with Colin's modified [munin plugin](https://gist.github.com/1177716).
+ - Enable persistent connections. Make sure that if you have multiple configurations connecting the persistent string is unique for each configuration so that "select" commands don't cause conflicts.
  - Use the `stats.php` script to inspect your cache to find oversized or wasteful cache tags.
 
 ## Release Notes
 
- - September 26, 2013: I forked this from Colon's code solely to make it a ZF add-on, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
+ - September 26, 2013: I forked this from Colin's code solely to make it a ZF add-on, vs a Magento plugin; the library is entirely the work of Colin Mollenhour
  - November 19, 2012: Added read_timeout option. (Feature only supported in standalone mode, will be supported by phpredis when pull request #260 is merged)
  - October 29, 2012: Added support for persistent connections. (Thanks samm-git!)
  - October 12, 2012: Improved memory usage and efficiency of garbage collection and updated recommendation.
